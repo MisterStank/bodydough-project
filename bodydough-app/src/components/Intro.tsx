@@ -1,16 +1,26 @@
-
+import Image from "next/image"
+import Link from "next/link";
 
 function Intro() {
   return (
-    <div>
-        <div className='relative top-20 z-20 text-center text-xl'>
-            <h1>Body dough</h1>
-        </div>
-        <button className='bg-white text-green-700 border border-green-700
-            font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-0 left-11
-            hover:bg-green-700 hover:text-white hover:border-transparent'>
-                Start
-        </button>
+    <div className='flex flex-col items-center justify-center h-screen'>
+      <Image
+        src={'/Home.jpg'}
+        alt='cover'
+        fill={true}
+        objectFit='cover'
+      />
+      <div className='relative z-20 text-center text-8xl font-sriracha'>
+        <h1>Body dough</h1>
+        <h4 className="text-xl font-prompt mt-4">Good food, Good mood and Good life</h4>
+        <Link href={'/about'}>
+          <button className='bg-yellow-500 text-black border-4 border-black 
+          font-medium text-xl font-prompt py-2 px-10 rounded-full  hover:bg-white
+           hover:text-yellow-600 hover:border-yellow-600'>
+            START
+          </button>
+        </Link>
+      </div>
     </div>
   )
 }
