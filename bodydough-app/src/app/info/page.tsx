@@ -1,8 +1,7 @@
 "use client"
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter} from "next/navigation";
 
 function Infopage() {
     const [name,setName] = useState<string>('');
@@ -64,7 +63,7 @@ function Infopage() {
                 timestamp : new Date()
               }),
             });
-            //router.push("/result");
+            router.push("/result");
           } catch (error) {
             console.error(error);
           }

@@ -1,4 +1,4 @@
-import mongoose , {Schema} from "mongoose";
+import mongoose , {Schema , model, models} from "mongoose";
 import { Userinfo } from "../types/userinfo";
 
 // Schema 
@@ -14,4 +14,4 @@ const UserinfoSchema = new Schema<Userinfo>({
     timestamp : {type : Date}
 });
 
-module.exports = mongoose.model('userinfos',UserinfoSchema);
+module.exports = models.userinfos || mongoose.model('userinfos',UserinfoSchema);
