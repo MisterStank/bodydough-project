@@ -22,9 +22,8 @@ export async function POST(req: NextRequest) {
             waist : body.waist,
             hip : body.hip,
             result : body.result,
-            timestamp : body.timestamp
+            timestamp : body.timestamp,
         });
-        console.log("insert complete !!")
       return NextResponse.json(newUserinfo);
     } catch (error : any) {
       return NextResponse.json(error.message, {

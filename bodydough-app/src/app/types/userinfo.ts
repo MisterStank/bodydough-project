@@ -7,5 +7,6 @@ export interface Userinfo {
     waist : number,
     hip : number,
     result : number,
-    timestamp : Date
+    timestamp : Date,
+    rating : Number
 };

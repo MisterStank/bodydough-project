@@ -60,9 +60,23 @@ function Infopage() {
                 waist : waist,
                 hip : hip,
                 result : 0,
-                timestamp : new Date()
+                timestamp : new Date(),
               }),
             });
+            // keep user data at the localstorage
+            await localStorage.setItem("userinfos" ,
+                JSON.stringify({
+                    name : name,
+                    age : age,
+                    gender : gender,
+                    weight : weight,
+                    height : height,
+                    waist : waist,
+                    hip : hip,
+                    result : 0,
+                    timestamp : new Date(),
+                }),
+            );
             router.push("/result");
           } catch (error) {
             console.error(error);
