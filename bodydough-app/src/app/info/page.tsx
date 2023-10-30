@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter} from "next/navigation";
+import { calculateResult } from "../utills/calculateresult";
 
 function Infopage() {
     const [name,setName] = useState<string>('');
@@ -77,7 +78,10 @@ function Infopage() {
                     timestamp : new Date(),
                 }),
             );
-            router.push("/result");
+            const resultNum = await calculateResult(
+                name,age,gender,weight,height,waist,hip
+            );
+            router.push(`/result/${resultNum}`);
           } catch (error) {
             console.error(error);
           }
