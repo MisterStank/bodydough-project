@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Intro from '@/components/Intro'
 
-export default function Home() {
+export default async function Home() {
   return (
     <div>
       <Intro/>
