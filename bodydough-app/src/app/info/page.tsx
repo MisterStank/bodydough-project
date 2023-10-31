@@ -79,7 +79,7 @@ function Infopage() {
                 }),
             );
             const resultNum = await calculateResult(
-                name,age,gender,weight,height,waist,hip
+                age,gender,weight,height,waist,hip
             );
             router.push(`/result/${resultNum}`);
           } catch (error) {
