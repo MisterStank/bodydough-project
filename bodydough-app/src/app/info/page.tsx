@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter} from "next/navigation";
+import { calculateResult } from "../utills/calculateresult";
 
 function Infopage() {
     const [name,setName] = useState<string>('');
@@ -46,6 +47,9 @@ function Infopage() {
 
     const fetchData = async() =>{
         try {
+            const resultNum = await calculateResult(
+                age,gender,weight,height,waist,hip
+            );
             await fetch("/api", {
               method: "POST",
               headers: {
@@ -59,11 +63,25 @@ function Infopage() {
                 height : height,
                 waist : waist,
                 hip : hip,
-                result : 0,
-                timestamp : new Date()
+                result : resultNum,
+                timestamp : new Date(),
               }),
             });
-            router.push("/result");
+            // keep user data at the localstorage
+            await localStorage.setItem("userinfos" ,
+                JSON.stringify({
+                    name : name,
+                    age : age,
+                    gender : gender,
+                    weight : weight,
+                    height : height,
+                    waist : waist,
+                    hip : hip,
+                    result : 0,
+                    timestamp : new Date(),
+                }),
+            );
+            router.push(`/result/${resultNum}`);
           } catch (error) {
             console.error(error);
           }
