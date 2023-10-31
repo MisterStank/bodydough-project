@@ -47,6 +47,9 @@ function Infopage() {
 
     const fetchData = async() =>{
         try {
+            const resultNum = await calculateResult(
+                age,gender,weight,height,waist,hip
+            );
             await fetch("/api", {
               method: "POST",
               headers: {
@@ -60,7 +63,7 @@ function Infopage() {
                 height : height,
                 waist : waist,
                 hip : hip,
-                result : 0,
+                result : resultNum,
                 timestamp : new Date(),
               }),
             });
@@ -77,9 +80,6 @@ function Infopage() {
                     result : 0,
                     timestamp : new Date(),
                 }),
-            );
-            const resultNum = await calculateResult(
-                age,gender,weight,height,waist,hip
             );
             router.push(`/result/${resultNum}`);
           } catch (error) {
