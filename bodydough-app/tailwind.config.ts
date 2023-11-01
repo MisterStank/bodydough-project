@@ -17,6 +17,12 @@ const config: Config = {
         sans: ['var(--font-inter)'],
         prompt: ['var(--font-promt)'],
         sriracha: ['var(--font-sriracha)']
+      },
+      colors : {
+        'regal-blue': '#243c5a',
+        'lightpurple' : '#cfcae4',
+        'lightbrown' : '#f2e0db',
+        'midpurple' : '#d4c8d1'
       }
     },
   },
