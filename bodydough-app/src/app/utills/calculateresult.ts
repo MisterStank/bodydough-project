@@ -1,5 +1,4 @@
-//  define
-
+//  definitions 
 /*
     1 is ผอม เเละ whr ปกติ
     2 is ผอม เเต่ whr เกิน

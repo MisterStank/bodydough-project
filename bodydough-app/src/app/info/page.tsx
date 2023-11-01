@@ -68,7 +68,8 @@ function Infopage() {
               }),
             });
             // keep user data at the localstorage
-            await localStorage.setItem("userinfos" ,
+            if(name != ""){
+                await localStorage.setItem("userinfos",
                 JSON.stringify({
                     name : name,
                     age : age,
@@ -80,7 +81,8 @@ function Infopage() {
                     result : resultNum,
                     timestamp : new Date(),
                 }),
-            );
+                );
+            }
             router.push(`/result/${resultNum}`);
           } catch (error) {
             console.error(error);
@@ -95,26 +97,26 @@ function Infopage() {
                 fill={true}
                 objectFit='cover'
             />
-            <div className='w-60% mg-4 pd-20 relative flex flex-col font-sriracha items-center justify-center rounded-lg border-4 border-gray-500'>
+            <div className='w-60% mg-4 md:p-2 lg:p-6 xl:p-10 relative flex flex-col font-sriracha items-center justify-center rounded-3xl bg-gradient-to-r from-lightpurple from-10% via-midpurple via-57% to-lightbrown to-90% border-solid border-1 border-black-600'>
                 <p className='md:text-xl lg:text-3xl xl:text-4xl mb-2 mt-5'>ข้อมูลทั่วไป</p>
                 <ul className='md:text-xs lg:text-sm xl:text-base mb-5 mx-5'>
                     <p className='mx-1 my-3'>
                         ชื่อ (นามเเฝง)
                         <span className="inline-flex items-baseline">
-                            <input className="self-center w-32 h-6  mx-2" type="text" value={name} onChange={handleNameChange} />
+                            <input className="self-center w-32 h-6  mx-2 rounded-md text-center" type="text" value={name} onChange={handleNameChange} />
                         </span>
                     </p>
                     <p className='mx-1 my-3'>
                         อายุ
-                        <span className="inline-flex items-baseline">
-                            <input className="self-center w-32 h-6  ml-10 mr-2" type="number" value={age} onChange={handleAgeChange} />
+                        <span className="inline-flex items-baseline"> 
+                            <input className="self-center w-32 h-6  ml-10 mr-2 rounded-md text-center" type="number" value={age} onChange={handleAgeChange} />
                         </span>
                         ปี
                     </p>
                     <p className='mx-1 my-3'>
                         เพศ
                         <span className="inline-flex items-baseline">
-                            <select name="options" className='self-center w-32 h-6  ml-10 mr-2' value={gender} onChange={handleGenderChange}>
+                            <select name="options" className='self-center w-32 h-6  ml-10 mr-2 rounded-md text-center' value={gender} onChange={handleGenderChange}>
                                 <option value="male">ชาย</option>
                                 <option value="female">หญิง</option>
                             </select>
@@ -123,28 +125,28 @@ function Infopage() {
                     <p className='mx-1 my-3'>
                         น้ำหนัก
                         <span className="inline-flex items-baseline">
-                            <input className="self-center w-32 h-6  ml-5 mr-2" type="number" value={weight} onChange={handleWeightChange} />
+                            <input className="self-center w-32 h-6  ml-5 mr-2 rounded-md text-center" type="number" value={weight} onChange={handleWeightChange} />
                         </span>
                         กิโลกรัม
                     </p>
                     <p className='mx-1 my-3'>
                         ส่วนสูง
                         <span className="inline-flex items-baseline">
-                            <input className="self-center w-32 h-6  ml-6 mr-2" type="number" value={height} onChange={handleHeightChange} />
+                            <input className="self-center w-32 h-6  ml-6 mr-2 rounded-md text-center" type="number" value={height} onChange={handleHeightChange} />
                         </span>
                         เซนติเมตร
                     </p>
                     <p className='mx-1 my-3'>
                         รอบเอว
                         <span className="inline-flex items-baseline">
-                            <input className="self-center w-32 h-6  ml-5 mr-2" type="number" value={waist} onChange={handleWaistChange} />
+                            <input className="self-center w-32 h-6  ml-5 mr-2 rounded-md text-center" type="number" value={waist} onChange={handleWaistChange} />
                         </span>
                         เซนติเมตร
                     </p>
                     <p className='mx-1 my-3'>
                         รอบสะโพก
                         <span className="inline-flex items-baseline">
-                            <input className="self-center w-32 h-6  ml-2 mr-2" type="number" value={hip} onChange={handleHipChange} />
+                            <input className="self-center w-32 h-6  ml-2 mr-2 rounded-md text-center" type="number" value={hip} onChange={handleHipChange} />
                         </span>
                         เซนติเมตร
                     </p>

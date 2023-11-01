@@ -8,5 +8,7 @@ export interface Userinfo {
     hip : number,
     result : number,
     timestamp : Date,
-    rating : Number
+    rating : Number,
+    knowledge : Number,
+    comment : string,
 };
