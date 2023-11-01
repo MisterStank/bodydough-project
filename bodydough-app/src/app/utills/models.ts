@@ -12,7 +12,9 @@ const UserinfoSchema = new Schema<Userinfo>({
     hip : {type : Number , default : 0},
     result : {type : Number , default : 0},
     timestamp : {type : Date},
-    rating : {type : Number , default : 0}
-});
+    rating : {type : Number , default : 0},
+    knowledge : {type : Number , default : 0},
+    comment : {type : String , default : ""}
+}); 
 
 module.exports = models.userinfos || mongoose.model('userinfos',UserinfoSchema);
