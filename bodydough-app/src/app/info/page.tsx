@@ -68,7 +68,8 @@ function Infopage() {
               }),
             });
             // keep user data at the localstorage
-            await localStorage.setItem("userinfos" ,
+            if(name != ""){
+                await localStorage.setItem("userinfos",
                 JSON.stringify({
                     name : name,
                     age : age,
@@ -80,7 +81,8 @@ function Infopage() {
                     result : resultNum,
                     timestamp : new Date(),
                 }),
-            );
+                );
+            }
             router.push(`/result/${resultNum}`);
           } catch (error) {
             console.error(error);

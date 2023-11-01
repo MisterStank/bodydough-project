@@ -28,7 +28,8 @@ export async function POST(req: NextRequest) {
           });
           return NextResponse.json(newUserinfo);
         }
-        const newUserinfo = await Userinfos.create({
+        if(body?.name != ""){
+          const newUserinfo = await Userinfos.create({
             name : body?.name,
             age :  body?.age,
             gender : body.gender,
@@ -38,8 +39,9 @@ export async function POST(req: NextRequest) {
             hip : body.hip,
             result : body.result,
             timestamp : body.timestamp,
-        });
-      return NextResponse.json(newUserinfo);
+          });
+          return NextResponse.json(newUserinfo);
+        }
     } catch (error : any) {
       return NextResponse.json(error.message, {
         status: 400,
