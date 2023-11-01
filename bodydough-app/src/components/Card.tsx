@@ -1,16 +1,20 @@
 import Image from 'next/image'
 
 
-function Card({ desCription, imgSrc }: { desCription: string, imgSrc: string }) {
+function Card({ desCription, imgSrc }: { desCription: string, imgSrc : string }) {
   return (
-    <div className='w-80vw h-200 bg-white shadow-md rounded-lg pt-0  flex'>
-      <div className='flex-none w-80 h-full relative'> 
+    <div className='max-w-full bg-white shadow-md rounded-lg  flex flex-col m-5'>
+      <div className='flex-none w-full h-[300px] relative'> 
           <Image src={imgSrc}
             alt='card'
             fill={true}
-            className='object-fit rounded-t-lg' />
+            className='object-fill rounded-t-lg' />
       </div>
-      <div className='p-10 w-full h-[200px] text-2xl text-gray-700 rounded-r-lg flex font-prompt'>{desCription}</div>
+      {desCription && (
+        <div className='p-5 w-full max-h-[200px] text-[min(4vw,1.5rem)] text-gray-700 rounded-r-lg flex font-prompt'>
+          {desCription}
+        </div>
+      )}
     </div>
   )
 }
