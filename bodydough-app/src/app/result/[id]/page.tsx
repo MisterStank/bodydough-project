@@ -1,8 +1,16 @@
 export default function Page({ params }: { params: { id: number } }) {
-    let result = "เส้นรอบเอวเกิน";
-    const id = params.id;
-    if (id == 1) result = "หุ่นดี";
-    else if (id == 2) result = "อ้วน";
-    else if(id == 3) result = "ผอม"
-    return <div>My Post: {result}</div>
+   const id = params.id;
+   const results : string[] = [
+    "ผอม เเละ whr ปกติ",
+    "ผอม เเต่ whr เกิน",
+    "สมส่วน เเละ whr ปกติ",
+    "สมส่วน เเต่ whr เกิน",
+    "น้ำหนักเกิน เเต่ whr ปกติ",
+    "น้ำหนักเกิน เเต่ whr เกิน"
+   ];
+   const result = results[id-1];
+   return (
+   <div>
+    My Post: {result}
+   </div>);
 }

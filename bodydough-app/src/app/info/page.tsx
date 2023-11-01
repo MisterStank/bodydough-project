@@ -48,7 +48,7 @@ function Infopage() {
     const fetchData = async() =>{
         try {
             const resultNum = await calculateResult(
-                age,gender,weight,height,waist,hip
+                gender,weight,height,waist,hip
             );
             await fetch("/api", {
               method: "POST",
@@ -77,7 +77,7 @@ function Infopage() {
                     height : height,
                     waist : waist,
                     hip : hip,
-                    result : 0,
+                    result : resultNum,
                     timestamp : new Date(),
                 }),
             );
