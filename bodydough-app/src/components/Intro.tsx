@@ -8,7 +8,7 @@ function Intro() {
         src={'/Home.jpg'}
         alt='cover'
         fill={true}
-        objectFit='fill'
+        objectFit='cover'
       />
       <div className='relative z-20 text-center text-8xl font-sriracha'>
         <h1>Body dough</h1>
