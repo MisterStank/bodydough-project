@@ -40,14 +40,12 @@ function createData (
   };
 }
 
-
-  
-export default async function BasicTable() {
+export default function BasicTable() {
   const[rows,setRows] = useState([]);
   useEffect(() => {
     async function getAllUserInfos() {
       try {
-        const responses = await fetch("https://bodydough-project.vercel.app/api", {
+        const responses = await fetch("/api", {
           method: "GET",
         });
   
