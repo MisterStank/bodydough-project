@@ -15,7 +15,7 @@ const Comment : React.FC<CommentProps> = ({onCommentChange}) =>{
         onCommentChange(newComment);
     };
 
-    const handleCommentChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+    const handleCommentChange = (e : any) => {
         handleCommentType(e.target.value);
     };
 
@@ -23,7 +23,7 @@ const Comment : React.FC<CommentProps> = ({onCommentChange}) =>{
         <div  className="relative flex flex-col font-ktd items-center justify-center rounded-lg bg-white"> 
             <span className="flex items-baseline" >
                 <TextareaAutosize aria-label="comment" minRows={3} placeholder="add your comment" 
-                    className="p-5" />
+                    className="p-5" onChange={handleCommentChange}/>
             </span>   
         </div>
     );

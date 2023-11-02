@@ -1,3 +1,4 @@
+"use client"
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Userinfo } from '../types/userinfo';
+import { useEffect, useState } from 'react';
 
 function createData (
     id: number,
@@ -38,42 +40,47 @@ function createData (
   };
 }
 
-async function getAllUserInfos() {
-    try {
-      const responses = await fetch("https://bodydough-project.vercel.app/api", {
-        method: "GET",
-      });
 
-      if (responses.ok) {
-        const data = await responses.json();
-        const results = data.map((user: Userinfo, index: number) => ({
-          id: index + 1,
-          name: user.name,
-          age: user.age,
-          gender: user.gender,
-          weight: user.weight,
-          height: user.height,
-          waist: user.waist,
-          hip: user.hip,
-          result: user.result,
-          rating: user.rating,
-          knowledge: user.knowledge,
-          comment: user.comment,
-        }));
-        return results;
-      } else {
-        console.log("Failed to fetch data from the API");
-        throw new Error("Failed to fetch data from the API");
-      }
-    } catch (error) {
-      console.log("Error:", error);
-      return [];
-    }
-  }
-  
   
 export default async function BasicTable() {
-  const rows = await getAllUserInfos();
+  const[rows,setRows] = useState([]);
+  useEffect(() => {
+    async function getAllUserInfos() {
+      try {
+        const responses = await fetch("https://bodydough-project.vercel.app/api", {
+          method: "GET",
+        });
+  
+        if (responses.ok) {
+          const data = await responses.json();
+          const results = data.map((user: Userinfo, index: number) => ({
+            id: index + 1,
+            name: user.name,
+            age: user.age,
+            gender: user.gender,
+            weight: user.weight,
+            height: user.height,
+            waist: user.waist,
+            hip: user.hip,
+            result: user.result,
+            rating: user.rating,
+            knowledge: user.knowledge,
+            comment: user.comment,
+          }));
+          setRows(results);
+
+        } else {
+          console.log("Failed to fetch data from the API");
+          throw new Error("Failed to fetch data from the API");
+        }
+      } catch (error) {
+        console.log("Error:", error);
+        return [];
+      }
+    }
+    getAllUserInfos();
+  }, []);
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
