@@ -80,7 +80,7 @@ export default function BasicTable() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={{ maxHeight: '700px', overflowY: 'auto' }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
