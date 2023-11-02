@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Userinfo } from '../types/userinfo';
 
-function createData(
+function createData (
     id: number,
     name : string,
     age : number,
@@ -43,6 +43,7 @@ async function getAllUserInfos() {
       const responses = await fetch("https://bodydough-project.vercel.app/api", {
         method: "GET",
       });
+
       if (responses.ok) {
         const data = await responses.json();
         const results = data.map((user: Userinfo, index: number) => ({
