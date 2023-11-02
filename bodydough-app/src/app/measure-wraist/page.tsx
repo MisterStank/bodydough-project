@@ -4,7 +4,7 @@ import Card from '@/components/Card'
 
 export default function Wraist() {
   return (
-    <div className='flex flex-col items-center h-full'>
+    <div className='flex flex-col items-center h-5/6'>
       <Image
         src={'/bgwraist.png'}
         alt='cover'
