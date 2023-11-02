@@ -14,10 +14,10 @@ export default function Wraist() {
       <div className='z-50 text-4xl font-sriracha m-5'>วิธีวัดเส้นรอบเอว</div>
       <div className='my-5 mx-10 grid grid-cols-1 sm:grid-cols-2 gap-8 z-50 overflow-y-scroll scroll-smooth
         scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
-        <Card desCription='ถอดหรือเลิกชุดขึ้นมา' imgSrc='/images/19.png'/>
-        <Card desCription='นำสายวัดมาพันรอบเอว โดยให้สายวัดขนานกัน และอยู่เหนือสะดือขึ้นมาเล็กน้อย ประมาณ 1 CM' imgSrc='/images/19.png'/>
-        <Card desCription='ไม่อยู่เหนือสะดือจนเกินไป และไม่นำนิ้วสอดเข้าไปในสายวัด' imgSrc='/images/19.png'/>
-        <Card desCription='ไม่พันสายวัดเอวเเน่นเกินไป' imgSrc='/images/19.png'/>
+        <Card desCription='ถอดหรือเลิกชุดขึ้นมา' imgSrc='/images/wraist1.png'/>
+        <Card desCription='นำสายวัดมาพันรอบเอว โดยให้สายวัดขนานกัน และอยู่เหนือสะดือขึ้นมาเล็กน้อย ประมาณ 1 CM' imgSrc='/images/wraist2.png'/>
+        <Card desCription='ไม่อยู่เหนือสะดือจนเกินไป และไม่นำนิ้วสอดเข้าไปในสายวัด' imgSrc='/images/wraist3.png'/>
+        <Card desCription='ไม่พันสายวัดเอวเเน่นเกินไป' imgSrc='/images/wraist4.png'/>
       </div>
       <div className='z-50 m-5'>
         <Link href={'/measure-hip'}>

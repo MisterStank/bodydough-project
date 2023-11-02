@@ -5,12 +5,15 @@ import Card from "@/components/Card";
 export default function Page({ params }: { params: { id: number } }) {
    const id = params.id;
    const results : string[] = [
-    "ผอม เเละ whr ปกติ",
-    "ผอม เเต่ whr เกิน",
-    "สมส่วน เเละ whr ปกติ",
-    "สมส่วน เเต่ whr เกิน",
-    "น้ำหนักเกิน เเต่ whr ปกติ",
-    "น้ำหนักเกิน เเต่ whr เกิน"
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ที่น้อยกว่าปกติ และมีภาวะอ้วนลงพุงแบบลูกแพร์",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์น้อยกว่าปกติ และมีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์น้อยกว่าปกติ และไม่มีภาวะอ้วนลงพุง",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ปกติ และมีภาวะอ้วนลงพุงแบบลูกแพร์",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ปกติ และมีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ปกติ และไม่มีภาวะอ้วนลงพุง",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์มากกว่าปกติ และมีภาวะอ้วนลงพุงแบบลูกแพร์",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์มากกว่าปกติ และมีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์มากกว่าปกติ และไม่มีภาวะอ้วนลงพุง",
    ];
    const result = results[id-1];
    return (
@@ -30,7 +33,7 @@ export default function Page({ params }: { params: { id: number } }) {
                fill={true}
                className='object-contain rounded-lg' />
          </div>
-        <div className="flex w-full h-[400px] relative">
+        <div className="flex w-full max-h-[400px] relative">
           <div className='my-5 p-10 w-[100%] max-h-[300px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
             flex font-ktd bg-white shadow-md z-50 overflow-y-auto overflow-x-hidden scroll-smooth
             scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'
