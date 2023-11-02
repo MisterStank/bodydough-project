@@ -41,7 +41,7 @@ export default function KnowledgePage(){
           }
     };
     return(
-        <div className='w-screen h-screen flex divide-x items-center justify-center h-screen'>
+        <div className='w-screen h-screen flex divide-x items-center justify-center '>
             <Image
                 src={'/Infopage.jpg'}
                 alt='cover'

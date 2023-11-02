@@ -5,17 +5,20 @@ import Card from "@/components/Card";
 export default function Page({ params }: { params: { id: number } }) {
    const id = params.id;
    const results : string[] = [
-    "ผอม เเละ whr ปกติ",
-    "ผอม เเต่ whr เกิน",
-    "สมส่วน เเละ whr ปกติ",
-    "สมส่วน เเต่ whr เกิน",
-    "น้ำหนักเกิน เเต่ whr ปกติ",
-    "น้ำหนักเกิน เเต่ whr เกิน"
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ที่น้อยกว่าปกติ และมีภาวะอ้วนลงพุงแบบลูกแพร์",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์น้อยกว่าปกติ และมีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์น้อยกว่าปกติ และไม่มีภาวะอ้วนลงพุง",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ปกติ และมีภาวะอ้วนลงพุงแบบลูกแพร์",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ปกติ และมีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์ปกติ และไม่มีภาวะอ้วนลงพุง",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์มากกว่าปกติ และมีภาวะอ้วนลงพุงแบบลูกแพร์",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์มากกว่าปกติ และมีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+    "ดัชนีมวลกายของคุณอยู่ในเกณฑ์มากกว่าปกติ และไม่มีภาวะอ้วนลงพุง",
    ];
    const result = results[id-1];
    return (
    <div>
-    <div className='flex flex-col items-end h-full'>
+    <div className='flex flex-col items-center h-full'>
       <Image
         src={'/bgresult.png'}
         alt='cover'
@@ -30,20 +33,18 @@ export default function Page({ params }: { params: { id: number } }) {
                fill={true}
                className='object-contain rounded-lg' />
          </div>
-        <div className="flex-none w-full h-[400px] relative">
-          <div className='my-5 p-10 w-[80%] max-h-[300px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
-            flex font-prompt bg-white shadow-md z-50 overflow-y-auto overflow-x-hidden scroll-smooth
+        <div className="flex w-full max-h-[400px] relative">
+          <div className='my-5 p-10 w-[100%] max-h-[300px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
+            flex font-ktd bg-white shadow-md z-50 overflow-y-auto overflow-x-hidden scroll-smooth
             scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'
             style={{ backgroundImage: `url('/images/19.png')`, backgroundSize: '100% 100%' }}>
-               นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์
-               นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์
-               นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์
+               {result}
           </div>
         </div>
       </div>
 
-      <div className='z-50 mr-10'>
-        <Link href={'/info'}>
+      <div className='z-50'>
+        <Link href={'/rating'}>
           <button className='bg-yellow-500 text-black border-4 border-black 
           font-medium text-xl font-prompt py-2 px-10 rounded-full  hover:bg-white
            hover:text-yellow-600 hover:border-yellow-600'>
