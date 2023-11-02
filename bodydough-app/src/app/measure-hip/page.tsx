@@ -17,11 +17,11 @@ export default function Hip() {
         <Card desCription='' imgSrc='/images/19.png'/>
         <div>
           <div className='my-5 p-5 w-full max-h-[200px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
-            flex font-prompt bg-white shadow-md'>
+            flex font-ktd bg-white shadow-md'>
             ยืนตัวตรงและสังเกตหาส่วนที่ผายที่สุดในร่างกาย ส่วนมากจะอยู่บริเวณบั้นท้าย ใช้สายวัดพาดรอบสะโพก ระวังไม่ให้สายวัดบิดเบี้ยวและรัดตึงจนเกินไป เพื่อค่าที่ถูกต้องแม่นยำ
           </div>
           <div className='p-5 w-full max-h-[200px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
-            flex font-prompt bg-white'>
+            flex font-ktd bg-white'>
             ไม่พันสายวัดเอวเเน่นเกินไป และไม่ควรวัดสูงหรือต่ำเกินไป รวมถึงไม่นำนิ้วสอดเข้าไปในสายวัด
           </div>
         </div>

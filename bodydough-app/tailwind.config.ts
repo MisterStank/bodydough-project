@@ -16,7 +16,8 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)'],
         prompt: ['var(--font-promt)'],
-        sriracha: ['var(--font-sriracha)']
+        sriracha: ['var(--font-sriracha)'],
+        ktd: ['var(--font-ktd)'],
       },
       colors : {
         'regal-blue': '#243c5a',

@@ -1,5 +1,7 @@
 "use client"
 import { useState } from "react";
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+
 
 interface CommentProps {
     onCommentChange : (newComment : string) => void;
@@ -18,12 +20,16 @@ const Comment : React.FC<CommentProps> = ({onCommentChange}) =>{
     };
 
     return(
-        <div className="w-60% mg-4 md:p-2 lg:p-6 xl:p-10 relative flex flex-col font-sriracha items-center justify-center rounded-lg bg-white">
-            <span className="inline-flex items-baseline">
-                <input className="self-center w-32 h-6  mx-2 rounded-md text-center" type="text" value={comment} onChange={handleCommentChange} />
-            </span>
+        <div  className="relative flex flex-col font-ktd items-center justify-center rounded-lg bg-white"> 
+            <span className="flex items-baseline" >
+                <TextareaAutosize aria-label="comment" minRows={3} placeholder="add your comment" 
+                    className="p-5" />
+            </span>   
         </div>
     );
 };
 
 export default Comment;
+
+//<input className="self-center w-32 h-6  mx-2 rounded-md text-center" type="text" value={comment} onChange={handleCommentChange} />
+            

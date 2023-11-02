@@ -9,7 +9,7 @@ function Paper() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 alt="about"
             />
-            <div className='block content-center absolute top-12 z-20 text-left font-prompt text-[min(4vw,1.5rem)] text-shadow-md
+            <div className='block content-center absolute top-12 z-20 text-left font-ktd text-[min(4vw,1.5rem)] text-shadow-md
                 space-y-4 leading-loose m-2 overflow-y-auto max-h-[80%] max-w-[70%]'>
                 <div className="indent-4">เว็บไซต์นี้เป็นนวัตกรรมของรายวิชา Nutrition Assessment 1 รหัสวิชา 3743307 ของคณะสหเวชศาสตร์
                 สาขาโภชนาการและการกำหนดอาหาร จัดทำขึ้นเพื่อเป็นแนวทางให้ผู้ที่ได้ใช้งานนั้น ได้ดูแลสุขภาพให้ดีขี้น   

@@ -11,7 +11,7 @@ function Card({ desCription, imgSrc }: { desCription: string, imgSrc : string })
             className='object-fill rounded-t-lg' />
       </div>
       {desCription && (
-        <div className='p-5 w-full max-h-[200px] text-[min(4vw,1.5rem)] text-gray-700 rounded-r-lg flex font-prompt'>
+        <div className='p-5 w-full max-h-[200px] text-[min(4vw,1.5rem)] text-gray-700 rounded-r-lg flex font-ktd'>
           {desCription}
         </div>
       )}

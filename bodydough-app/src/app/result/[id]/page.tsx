@@ -15,7 +15,7 @@ export default function Page({ params }: { params: { id: number } }) {
    const result = results[id-1];
    return (
    <div>
-    <div className='flex flex-col items-end h-full'>
+    <div className='flex flex-col items-center h-full'>
       <Image
         src={'/bgresult.png'}
         alt='cover'
@@ -30,20 +30,18 @@ export default function Page({ params }: { params: { id: number } }) {
                fill={true}
                className='object-contain rounded-lg' />
          </div>
-        <div className="flex-none w-full h-[400px] relative">
-          <div className='my-5 p-10 w-[80%] max-h-[300px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
-            flex font-prompt bg-white shadow-md z-50 overflow-y-auto overflow-x-hidden scroll-smooth
+        <div className="flex w-full h-[400px] relative">
+          <div className='my-5 p-10 w-[100%] max-h-[300px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
+            flex font-ktd bg-white shadow-md z-50 overflow-y-auto overflow-x-hidden scroll-smooth
             scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'
             style={{ backgroundImage: `url('/images/19.png')`, backgroundSize: '100% 100%' }}>
-               นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์
-               นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์
-               นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์ นี่คือผลลัพธ์
+               {result}
           </div>
         </div>
       </div>
 
-      <div className='z-50 mr-10'>
-        <Link href={'/info'}>
+      <div className='z-50'>
+        <Link href={'/rating'}>
           <button className='bg-yellow-500 text-black border-4 border-black 
           font-medium text-xl font-prompt py-2 px-10 rounded-full  hover:bg-white
            hover:text-yellow-600 hover:border-yellow-600'>
