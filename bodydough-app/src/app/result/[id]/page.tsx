@@ -50,7 +50,7 @@ export default function Page({ params }: { params: { id: number } }) {
    const img = `/images/result/${id}.png`
    return (
    <div>
-    <div className='flex flex-col items-center h-full'>
+    <div className='flex flex-col items-center h-5/6'>
       <Image
         src={'/bgresult.png'}
         alt='cover'
