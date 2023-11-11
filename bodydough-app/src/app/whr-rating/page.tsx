@@ -43,7 +43,7 @@ export default function WHRRatingPage(){
                 objectFit='cover'
             />
             <div className='w-60% mg-4 pd-20 relative flex flex-col font-sriracha items-center justify-center rounded-lg '>
-                <p className='md:text-xl lg:text-3xl xl:text-4xl mb-5 mt-5'>คุณคิดว่า Body Dough มีความถูกต้องในการประเมินภาวะอ้วนลงพุงมากน้ิยเพียงใด</p>
+                <p className='md:text-xl lg:text-3xl xl:text-4xl mb-5 mt-5'>คุณคิดว่า Body Dough มีความถูกต้องในการประเมินภาวะอ้วนลงพุงมากน้อยเพียงใด</p>
                     <StarRating 
                     totalStars={5} 
                     starSize="text-4xl"
