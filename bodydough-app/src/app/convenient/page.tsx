@@ -6,7 +6,7 @@ import getCurrentUserInfo from "../utills/user";
 import { useRouter } from "next/navigation";
 
 
-export default function RatingPage(){
+export default function ConvenientRatingPage(){
     const [rating,setRating] = useState<number>(0);
 
     const router = useRouter();
@@ -18,18 +18,18 @@ export default function RatingPage(){
         try {
             const userinfo = getCurrentUserInfo();
             console.log("userinfo ",userinfo);
-            await fetch("/api/rate", {
+            await fetch("/api/convenient", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
                 name : userinfo.name,
-                rating : rating
+                convenient : rating
               }),
             });
             // keep user data at the localstorage
-            router.push("/comment");
+            router.push("/rating");
           } catch (error) {
             console.error(error);
           }
@@ -43,7 +43,7 @@ export default function RatingPage(){
                 objectFit='cover'
             />
             <div className='w-60% mg-4 pd-20 relative flex flex-col font-sriracha items-center justify-center rounded-lg '>
-                <p className='md:text-xl lg:text-3xl xl:text-4xl mb-5 mt-5'>ความพึงพอใจในการใช้เว็บไซต์</p>
+                <p className='md:text-xl lg:text-3xl xl:text-4xl mb-5 mt-5'>คุณคิดว่า Body Dough มีความสะดวกในการใช้มากน้อยเพียงใด</p>
                     <StarRating 
                     totalStars={5} 
                     starSize="text-4xl"

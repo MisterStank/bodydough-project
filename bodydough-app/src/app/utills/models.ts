@@ -19,4 +19,4 @@ const UserinfoSchema = new Schema<Userinfo>({
     comment : {type : String , default : ""}
 }); 
 
-module.exports = models.userinfos || mongoose.model('userinfomations',UserinfoSchema);
+module.exports = models.userinfomations || mongoose.model('userinfomations',UserinfoSchema);
