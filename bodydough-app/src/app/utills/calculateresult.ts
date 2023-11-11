@@ -14,7 +14,7 @@
    ];
 */
 export const calculateResult = (gender : string,weight : number,height : number,waist : number, hip : number) : Number =>{
-    const bmi = weight / (height/100)**2;
+    const bmi = parseFloat((weight / (height/100)**2).toFixed(1)); // calculate bmi and fixed decimal 1 digit
     const whr  = waist/ hip;
     const waistCheck = gender === "male" ? 90 : 80;
     if (gender === "male"){
@@ -22,7 +22,7 @@ export const calculateResult = (gender : string,weight : number,height : number,
             if (waist < hip && hip > waistCheck && whr < waistCheck/100) return 1;
             if (waist > hip && whr > waistCheck/100) return 2;
             return 3;
-        }else if (bmi < 23){
+        }else if (bmi < 22.9){
             if (waist < hip && hip > waistCheck && whr < waistCheck/100) return 4;
             if (waist > hip && whr > waistCheck/100) return 5;
             return 6;
@@ -46,4 +46,8 @@ export const calculateResult = (gender : string,weight : number,height : number,
             return 18;
         }
     }
+}
+
+export  const calculateBmi = (weight : Number , height : Number) : Number =>{
+    return 0;
 }

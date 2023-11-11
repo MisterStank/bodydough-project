@@ -1,8 +1,6 @@
 "use client"
 import Link from "next/link";
 import Image from "next/image";
-import Card from "@/components/Card";
-import SimplePopup from "@/components/Popup";
 
 export default function Page({ params }: { params: { id: number } }) {
    const id = params.id;
