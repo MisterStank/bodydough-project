@@ -49,6 +49,8 @@ function Infopage() {
 
     const fetchData = async() =>{
         try {
+            setLoading(true);
+
             const resultNum = await calculateResult(
                 gender,weight,height,waist,hip
             );
@@ -91,9 +93,6 @@ function Infopage() {
           } catch (error) {
             console.error(error);
           }
-          finally {
-            setLoading(false); // Set loading back to false when the operation is done
-        }
     };
 
     return (
