@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from 'next/navigation'
 
-export default function Page({ params }: { params: { id: number } } ) {
+export default async function Page({ params }: { params: { id: number } } ) {
    const searchParams = useSearchParams()
    const id = params.id;
    const imageIDs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,7,8,9,7,8,9,16,17,18,16,17,18];
@@ -106,6 +106,8 @@ export default function Page({ params }: { params: { id: number } } ) {
     "ไม่สมส่วน",
     "ไม่สมส่วน",
    ];
+   
+   await new Promise(resolve => setTimeout(resolve,1000))
 
    return (
    <div>
@@ -124,14 +126,14 @@ export default function Page({ params }: { params: { id: number } } ) {
                fill={true}
                className='object-contain rounded-lg' />
          </div>
-         <div className="m-5 flex w-[90%] sm:w-[70%] max-h-[400px] sm:max-h-[600px] relative flex-col item-center">
+         <div className="m-5 flex w-[90%] sm:w-[80%] max-h-[400px] sm:max-h-[600px] relative flex-col item-center">
                     <div className='p-5 w-[100%] max-h-[400px] sm:max-h-[600px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
                         flex font-ktd bg-white shadow-md z-50 '
                         style={{ backgroundImage: `url('/images/19.png')`, backgroundSize: '100% 100%' }}>
                         <div className="m-5 leading-relaxed
                             overflow-y-auto overflow-x-hidden scroll-smooth
                             scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
-                            <li>ดัชนีมวลกาย(BMI) = {bmi} <br/>
+                            <li>ดัชนีมวลกาย(BMI) = <b>{bmi}</b> <br/>
                                 {resultFromBmi[id-1]} 
                             </li>
                             <li>
