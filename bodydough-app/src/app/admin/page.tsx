@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import { Userinfo } from '../types/userinfo';
 import { useEffect, useState } from 'react';
 import { styled } from '@mui/material';
+import { calculateBmi, calculateWhr } from '../utills/calculateresult';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -30,6 +31,73 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
+
+const resultFromWhr = [
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+  "มีภาวะอ้วนลงพุงแบบลูกแพร์",
+  "มีภาวะอ้วนลงพุงแบบแอปเปิ้ล",
+  "ไม่มีภาวะอ้วนลงพุง",
+ ];
+
+ const finalResult = [
+  "ผอม",
+  "ผอม",
+  "ผอม",
+  "สมส่วน",
+  "สมส่วน",
+  "สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ผอม",
+  "ผอม",
+  "ผอม",
+  "สมส่วน",
+  "สมส่วน",
+  "สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+  "ไม่สมส่วน",
+ ];
+
 
 export default function BasicTable() {
   const[rows,setRows] = useState([]);
@@ -52,6 +120,8 @@ export default function BasicTable() {
             waist: user.waist,
             hip: user.hip,
             result: user.result,
+            bmi : calculateBmi(user.weight,user.height),
+            whr : calculateWhr(user.waist,user.hip),
             bmiaccuracy : user.bmiaccuracy,
             whraccuracy : user.whraccuracy,
             convenient : user.convenient,
@@ -85,6 +155,8 @@ export default function BasicTable() {
             <StyledTableCell align="right">Waist&nbsp;(cm)</StyledTableCell>
             <StyledTableCell align="right">Hip&nbsp;(cm)</StyledTableCell>
             <StyledTableCell align="right">Result</StyledTableCell>
+            <StyledTableCell align="right">Bmi</StyledTableCell>
+            <StyledTableCell align="right">Whr</StyledTableCell>
             <StyledTableCell align="right">BmiAccuarcy</StyledTableCell>
             <StyledTableCell align="right">WhrAccuracy</StyledTableCell>
             <StyledTableCell align="right">Convenient</StyledTableCell>
@@ -106,7 +178,9 @@ export default function BasicTable() {
               <StyledTableCell align="right">{row.height}</StyledTableCell>
               <StyledTableCell align="right">{row.waist}</StyledTableCell>
               <StyledTableCell align="right">{row.hip}</StyledTableCell>
-              <StyledTableCell align="right">{row.result}</StyledTableCell>
+              <StyledTableCell align="right">ร่างกาย{finalResult[row.result-1]} <br/>{resultFromWhr[row.result-1]}</StyledTableCell>
+              <StyledTableCell align="right">{row.bmi}</StyledTableCell>
+              <StyledTableCell align="right">{row.whr}</StyledTableCell>
               <StyledTableCell align="right">{row.bmiaccuracy}</StyledTableCell>
               <StyledTableCell align="right">{row.whraccuracy}</StyledTableCell>
               <StyledTableCell align="right">{row.convenient}</StyledTableCell>
