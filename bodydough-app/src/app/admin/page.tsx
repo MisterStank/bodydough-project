@@ -157,10 +157,10 @@ export default function BasicTable() {
             <StyledTableCell align="right">Result</StyledTableCell>
             <StyledTableCell align="right">Bmi</StyledTableCell>
             <StyledTableCell align="right">Whr</StyledTableCell>
-            <StyledTableCell align="right">BmiAccuarcy</StyledTableCell>
-            <StyledTableCell align="right">WhrAccuracy</StyledTableCell>
-            <StyledTableCell align="right">Convenient</StyledTableCell>
-            <StyledTableCell align="right">Rating</StyledTableCell>
+            <StyledTableCell align="right">ประเมินดัชนีมวลกาย</StyledTableCell>
+            <StyledTableCell align="right">ประเมินภาวะอ้วนลงพุง</StyledTableCell>
+            <StyledTableCell align="right">ความสะดวกในการใช้</StyledTableCell>
+            <StyledTableCell align="right">ความพึงพอใจในการใช้เว็บไซต์</StyledTableCell>
             <StyledTableCell align="right">comment</StyledTableCell>
           </StyledTableRow>
         </TableHead>
