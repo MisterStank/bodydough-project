@@ -59,20 +59,26 @@ export default function Page({ params }: { params: { id: number } }) {
       />
       <div className='my-5 mx-10 grid grid-cols-1 sm:grid-cols-2 gap-1 z-50 overflow-y-auto overflow-x-hidden scroll-smooth
         scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
-        <div className="flex-none w-full h-[300px] relative">
+        <div className="flex-none w-full h-[300px] sm:h-[500px] relative">
             <Image src={`/images/result/${id}.png`}
                alt='card'
                fill={true}
                className='object-contain rounded-lg' />
          </div>
-        <div className="flex w-full max-h-[400px] relative flex-col item-center">
-          <div className='my-5 p-10 w-[100%] max-h-[300px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
-            flex font-ktd bg-white shadow-md z-50 overflow-y-auto overflow-x-hidden scroll-smooth
-            scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'
-            style={{ backgroundImage: `url('/images/19.png')`, backgroundSize: '100% 100%' }}>
-               {result + texts[id-1]}
-          </div>
-        </div>
+         <div className="m-5 flex w-[90%] sm:w-[70%] max-h-[400px] sm:max-h-[600px] relative flex-col item-center">
+                    <div className='p-5 w-[100%] max-h-[400px] sm:max-h-[600px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
+                        flex font-ktd bg-white shadow-md z-50 '
+                        style={{ backgroundImage: `url('/images/19.png')`, backgroundSize: '100% 100%' }}>
+                        <div className="m-5 leading-relaxed
+                            overflow-y-auto overflow-x-hidden scroll-smooth
+                            scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+                            <li>ดัชนีมวลกาย(BMI) = …. <br/></li>
+                            <li>อยู่ในเกณฑ์ผอม (&lt;18.50) 
+                            มีภาวะอ้วนลงพุงแบบลูกแพร์
+                            ร่างกายผอม และมีภาวะอ้วนลงพุงแบบลูกแพร์</li> 
+                        </div>
+                    </div>
+                </div>
       </div>
 
       <div className='z-50'>
