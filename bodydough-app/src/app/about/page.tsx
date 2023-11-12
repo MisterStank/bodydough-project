@@ -1,5 +1,3 @@
-import { tree } from 'next/dist/build/templates/app-page'
-import Image from 'next/image'
 import Link from 'next/link'
 import Paper from '@/components/paper'
 
