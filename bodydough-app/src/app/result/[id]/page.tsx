@@ -130,11 +130,11 @@ export default function Page({ params }: { params: { id: number } } ) {
       ) : (
         // Render the actual content once data is ready
         <div className='flex flex-col items-center h-5/6'>
-          <Image src={'/bgresult.png'} alt='cover' fill={true} objectFit='cover' />
+          <Image src={'/bgresult.png'} alt='cover' fill={true} objectFit='cover' loading="eager"/>
           <div className='my-5 mx-10 grid grid-cols-1 sm:grid-cols-2 gap-1 z-50 overflow-y-auto overflow-x-hidden scroll-smooth
             scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
             <div className="flex-none w-full h-[300px] sm:h-[500px] relative">
-              <Image src={`/images/result/${imageIDs[id - 1]}.png`} alt='card' fill={true} className='object-contain rounded-lg' />
+              <Image src={`/images/result/${imageIDs[id - 1]}.png`} alt='card' fill={true} className='object-contain rounded-lg' loading="lazy" />
             </div>
             <div className="m-5 flex w-[90%] sm:w-[80%] max-h-[400px] sm:max-h-[600px] relative flex-col item-center">
               <div className='p-5 w-[100%] max-h-[400px] sm:max-h-[600px] text-[min(4vw,1.5rem)] text-gray-700 rounded-lg 
