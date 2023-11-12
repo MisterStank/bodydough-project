@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter} from "next/navigation";
-import { calculateResult } from "../utills/calculateresult";
+import { calculateBmi, calculateResult } from "../utills/calculateresult";
 
 function Infopage() {
     const [name,setName] = useState<string>('');
@@ -50,6 +50,8 @@ function Infopage() {
             const resultNum = await calculateResult(
                 gender,weight,height,waist,hip
             );
+            const bmi = calculateBmi(weight,height);
+
             await fetch("/api", {
               method: "POST",
               headers: {
@@ -83,7 +85,7 @@ function Infopage() {
                 }),
                 );
             }
-            router.push(`/result/${resultNum}`);
+            router.push(`/result/${resultNum}?bmi=${bmi}`);
           } catch (error) {
             console.error(error);
           }
