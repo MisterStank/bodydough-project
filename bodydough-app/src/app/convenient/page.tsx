@@ -35,15 +35,15 @@ export default function ConvenientRatingPage(){
           }
     };
     return(
-        <div className='w-screen h-screen flex divide-x items-center justify-center h-screen'>
+        <div className='w-screen h-screen flex divide-x items-center justify-center'>
             <Image
                 src={'/Infopage.jpg'}
                 alt='cover'
                 fill={true}
                 objectFit='cover'
             />
-            <div className='w-60% mg-4 pd-20 relative flex flex-col font-sriracha items-center justify-center rounded-lg '>
-                <p className='md:text-xl lg:text-3xl xl:text-4xl mb-5 mt-5'>คุณคิดว่า Body Dough มีความสะดวกในการใช้มากน้อยเพียงใด</p>
+            <div className='w-60% m-5 text-center relative flex flex-col font-sriracha items-center justify-center rounded-lg '>
+                <p className='md:text-xl lg:text-3xl xl:text-4xl mb-5 mt-5'>คุณคิดว่า Body Dough มีความสะดวก<br/>ในการใช้มากน้อยเพียงใด</p>
                     <StarRating 
                     totalStars={5} 
                     starSize="text-4xl"

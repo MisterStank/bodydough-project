@@ -86,51 +86,51 @@ export default function BasicTable() {
           <LinearProgress color="inherit"/>
         </div>
       ) : (
-        <TableContainer component={Paper} style={{ maxHeight: '650px', overflowY: 'auto'}}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <StyledTableRow>
-                <StyledTableCell>ID</StyledTableCell>
-                <StyledTableCell align="right">Name</StyledTableCell>
-                <StyledTableCell align="right">Age&nbsp;(year)</StyledTableCell>
-                <StyledTableCell align="right">Gender</StyledTableCell>
-                <StyledTableCell align="right">Weight&nbsp;(kg)</StyledTableCell>
-                <StyledTableCell align="right">Height&nbsp;(cm)</StyledTableCell>
-                <StyledTableCell align="right">Waist&nbsp;(cm)</StyledTableCell>
-                <StyledTableCell align="right">Hip&nbsp;(cm)</StyledTableCell>
-                <StyledTableCell align="right">Result</StyledTableCell>
-                <StyledTableCell align="right">BmiAccuarcy</StyledTableCell>
-                <StyledTableCell align="right">WhrAccuracy</StyledTableCell>
-                <StyledTableCell align="right">Convenient</StyledTableCell>
-                <StyledTableCell align="right">Rating</StyledTableCell>
-                <StyledTableCell align="right">comment</StyledTableCell>
+        <TableContainer component={Paper} style={{ maxHeight: '700px', overflowY: 'auto' }}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <StyledTableRow>
+              <StyledTableCell>ID</StyledTableCell>
+              <StyledTableCell align="right">Name</StyledTableCell>
+              <StyledTableCell align="right">Age&nbsp;(year)</StyledTableCell>
+              <StyledTableCell align="right">Gender</StyledTableCell>
+              <StyledTableCell align="right">Weight&nbsp;(kg)</StyledTableCell>
+              <StyledTableCell align="right">Height&nbsp;(cm)</StyledTableCell>
+              <StyledTableCell align="right">Waist&nbsp;(cm)</StyledTableCell>
+              <StyledTableCell align="right">Hip&nbsp;(cm)</StyledTableCell>
+              <StyledTableCell align="right">Result</StyledTableCell>
+              <StyledTableCell align="right">BmiAccuarcy</StyledTableCell>
+              <StyledTableCell align="right">WhrAccuracy</StyledTableCell>
+              <StyledTableCell align="right">Convenient</StyledTableCell>
+              <StyledTableCell align="right">Rating</StyledTableCell>
+              <StyledTableCell align="right">comment</StyledTableCell>
+            </StyledTableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row : any) => (
+              <StyledTableRow
+                key={row.id}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>
+                <StyledTableCell align="right">{row.name}</StyledTableCell>
+                <StyledTableCell align="right">{row.age}</StyledTableCell>
+                <StyledTableCell align="right">{row.gender}</StyledTableCell>
+                <StyledTableCell align="right">{row.weight}</StyledTableCell>
+                <StyledTableCell align="right">{row.height}</StyledTableCell>
+                <StyledTableCell align="right">{row.waist}</StyledTableCell>
+                <StyledTableCell align="right">{row.hip}</StyledTableCell>
+                <StyledTableCell align="right">{row.result}</StyledTableCell>
+                <StyledTableCell align="right">{row.bmiaccuracy}</StyledTableCell>
+                <StyledTableCell align="right">{row.whraccuracy}</StyledTableCell>
+                <StyledTableCell align="right">{row.convenient}</StyledTableCell>
+                <StyledTableCell align="right">{row.rating}</StyledTableCell>
+                <StyledTableCell align="right">{row.comment}</StyledTableCell>
               </StyledTableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row: any) => (
-                <StyledTableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>
-                  <StyledTableCell align="right">{row.name}</StyledTableCell>
-                  <StyledTableCell align="right">{row.age}</StyledTableCell>
-                  <StyledTableCell align="right">{row.gender}</StyledTableCell>
-                  <StyledTableCell align="right">{row.weight}</StyledTableCell>
-                  <StyledTableCell align="right">{row.height}</StyledTableCell>
-                  <StyledTableCell align="right">{row.waist}</StyledTableCell>
-                  <StyledTableCell align="right">{row.hip}</StyledTableCell>
-                  <StyledTableCell align="right">{row.result}</StyledTableCell>
-                  <StyledTableCell align="right">{row.bmiaccuracy}</StyledTableCell>
-                  <StyledTableCell align="right">{row.whraccuracy}</StyledTableCell>
-                  <StyledTableCell align="right">{row.convenient}</StyledTableCell>
-                  <StyledTableCell align="right">{row.rating}</StyledTableCell>
-                  <StyledTableCell align="right">{row.comment}</StyledTableCell>
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
       )}
     </div>
   );

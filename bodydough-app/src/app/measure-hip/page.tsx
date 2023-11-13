@@ -14,7 +14,7 @@ export default function Hip() {
       <div className='z-50 text-4xl font-sriracha m-5'>วิธีวัดเส้นรอบสะโพก</div>
       <div className='my-5 mx-10 grid grid-cols-1 sm:grid-cols-2 gap-1 z-50 overflow-y-scroll overflow-x-hidden scroll-smooth
         scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
-        <Card desCription='' imgSrc='/images/hip.PNG'/>
+        <Card desCription='' imgSrc='/images/hip.jpg.jpg'/>
         <div>
           
           <div className='my-5 p-5 w-full max-h-[220px] text-[min(3.5vw,1.5rem)] text-gray-700 rounded-lg 
