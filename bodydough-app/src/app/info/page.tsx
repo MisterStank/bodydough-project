@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter} from "next/navigation";
 import { calculateBmi, calculateResult } from "../utills/calculateresult";
+import { LinearProgress } from "@mui/material";
 
 function Infopage() {
     const [name,setName] = useState<string>('');
@@ -12,6 +13,7 @@ function Infopage() {
     const [height,setHeight] = useState<number>(0);
     const [waist,setWaist] = useState<number>(0);
     const [hip,setHip] = useState<number>(0);
+    const [loading, setLoading] = useState<boolean>(false); 
 
 
     const router = useRouter();
@@ -47,6 +49,8 @@ function Infopage() {
 
     const fetchData = async() =>{
         try {
+            setLoading(true);
+
             const resultNum = await calculateResult(
                 gender,weight,height,waist,hip
             );
@@ -93,6 +97,13 @@ function Infopage() {
 
     return (
         <div className='w-screen h-screen flex divide-x items-center justify-center'>
+            {loading ? ( // Conditionally render loading screen
+                <div className="loading-screen">
+                    <h1 className="m-5 font-sriracha text-3xl">Loading your result...</h1>
+                    <LinearProgress color="inherit"/>
+                </div>
+            ) : (
+            <>
             <Image
                 src={'/Infopage.jpg'}
                 alt='cover'
@@ -159,6 +170,8 @@ function Infopage() {
                         ENTER
                     </button>
             </div>
+            </>
+            )}
         </div>
     )
 }
