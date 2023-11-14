@@ -68,3 +68,8 @@ export const calculateBmi = (weight : number , height : number) : number =>{
     const bmi = parseFloat((weight / (height/100)**2).toFixed(1));
     return bmi;
 }
+
+export const calculateWhr = (waist : number , hip : number ) : number =>{
+    const whr  = parseFloat((waist/hip).toFixed(2));
+    return whr;
+}
