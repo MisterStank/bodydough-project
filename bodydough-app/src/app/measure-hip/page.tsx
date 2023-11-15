@@ -12,7 +12,7 @@ export default function Hip() {
         objectFit='cover'
       />
       <div className='z-50 text-4xl font-sriracha m-5'>วิธีวัดเส้นรอบสะโพก</div>
-      <div className='my-5 mx-10 grid grid-cols-1 sm:grid-cols-2 gap-1 z-50 overflow-y-scroll overflow-x-hidden scroll-smooth
+      <div className='my-5 mx-10 grid grid-cols-1 md:grid-cols-2 gap-1 z-50 overflow-y-scroll overflow-x-hidden scroll-smooth
         scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
         <Card desCription='' imgSrc='/images/hip.jpg.jpg'/>
         <div>
@@ -25,7 +25,7 @@ export default function Hip() {
                 fill={true}
                 className='object-contain rounded-t-lg' />
             </div>
-            <div>ยืนตัวตรงและสังเกตหาส่วนที่ผายที่สุดในร่างกาย ส่วนมากจะอยู่บริเวณบั้นท้าย ใช้สายวัดพาดรอบสะโพก ระวังไม่ให้สายวัดบิดเบี้ยวและรัดตึงจนเกินไป เพื่อค่าที่ถูกต้องแม่นยำ</div>
+            <div className='overflow-auto'>ยืนตัวตรงและสังเกตหาส่วนที่ผายที่สุดในร่างกาย ส่วนมากจะอยู่บริเวณบั้นท้าย ใช้สายวัดพาดรอบสะโพก ระวังไม่ให้สายวัดบิดเบี้ยวและรัดตึงจนเกินไป เพื่อค่าที่ถูกต้องแม่นยำ</div>
           </div>
           
           <div className='my-5 p-5 w-full max-h-[220px] text-[min(3.5vw,1.5rem)] text-gray-700 rounded-lg 

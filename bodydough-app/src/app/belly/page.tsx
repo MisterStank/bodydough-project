@@ -19,9 +19,10 @@ function belly() {
                         <div className="m-5 leading-loose
                             overflow-y-auto overflow-x-hidden scroll-smooth
                             scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent scrollbar- scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
-                            ภาวะอ้วนลงพุงแบบแอปเปิ้ล วัดจากเส้นรอบเอวเทียบเส้นรอบสะโพก(WHR) โดยถ้าผู้ชายมีค่ามากกว่า 0.9 และผู้หญิงมีค่ามากกว่า 0.8 จะอ้วนลงพุงแบบแอปเปิ้ล<br/>
-                            <br/>
-                            ภาวะอ้วนลงพุงแบบลูกแพร์ วัดจากเส้นรอบสะโพก โดยถ้าผู้ชายมีเส้นรอบสะโพกมากกว่า 90 เซนติเมตร และผู้หญิงมีเส้นรอบสะโพกมากกว่า 80 เซนติเมตร จะอ้วนลงพุงแบบลูกแพร์ 
+                            ภาวะอ้วนลงพุงแบบแอปเปิ้ล วัดจากเส้นรอบเอวเทียบเส้นรอบสะโพก(WHR) หน่วยเซนติเมตร โดย<br/>
+                            ผู้ชายมีค่า WHR มากกว่า 0.9<br/>
+                            ผู้หญิงมีค่า WHR มากกว่า 0.8<br/>
+                            จะถือว่ามีภาวะอ้วนลงพุงแบบแอปเปิ้ล 
                         </div>
                     </div>
                 </div>
