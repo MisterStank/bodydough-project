@@ -147,15 +147,16 @@ export default function BasicTable() {
     getAllUserInfos();
   }, []);
 
-  return <div>
-    {loading ? (
-        <div className="loading-screen">
+  return (
+        <TableContainer component={Paper} style={{ maxHeight: '700px', overflowY: 'auto' }}>
+          {loading ?
+          (<div className="loading-screen">
           <h1 className="m-5 font-sriracha text-3xl">Loading your result...</h1>
           <LinearProgress color="inherit"/>
-        </div>
-      ) : (
-        <TableContainer component={Paper} style={{ maxHeight: '700px', overflowY: 'auto' }}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          </div>
+          )
+          :
+          (<Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <StyledTableRow>
                 <StyledTableCell>ID</StyledTableCell>
@@ -179,8 +180,8 @@ export default function BasicTable() {
             <TableBody>
               {rows.map((row : any) => (
                 <StyledTableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                key={row.id}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>
                   <StyledTableCell align="right">{row.name}</StyledTableCell>
@@ -201,10 +202,8 @@ export default function BasicTable() {
                 </StyledTableRow>
               ))}
             </TableBody>
-          </Table>
+          </Table>)
+        }
         </TableContainer>
-      )
-      }
-        </div>
-  
+        )
 }
